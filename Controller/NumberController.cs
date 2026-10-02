@@ -2,8 +2,8 @@
 using Parcial_p4_LuisEnmanuel.Modelos;
 using Parcial_p4_LuisEnmanuel.Servicios;
 
-namespace Parcial_p4_LuisEnmanuel.Controller
-{
+namespace Parcial_p4_LuisEnmanuel.Controller;
+
     [Route("api/[controller]")]
     [ApiController]
     public class NumberController : ControllerBase
@@ -50,4 +50,4 @@ namespace Parcial_p4_LuisEnmanuel.Controller
             return Ok(records);
         }
     }
-}
+

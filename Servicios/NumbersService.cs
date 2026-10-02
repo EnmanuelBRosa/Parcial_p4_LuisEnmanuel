@@ -3,8 +3,8 @@ using Microsoft.Data.Sqlite;
 using Parcial_p4_LuisEnmanuel.Modelos;
 
 
-namespace Parcial_p4_LuisEnmanuel.Servicios
-{
+namespace Parcial_p4_LuisEnmanuel.Servicios;
+
     public class NumbersService
     {
         private readonly string _connectionString;
@@ -60,4 +60,4 @@ namespace Parcial_p4_LuisEnmanuel.Servicios
         }
 
     }
-}
+

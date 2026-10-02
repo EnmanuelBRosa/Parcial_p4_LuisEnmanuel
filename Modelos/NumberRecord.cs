@@ -1,5 +1,5 @@
-﻿namespace Parcial_p4_LuisEnmanuel.Modelos
-{
+﻿namespace Parcial_p4_LuisEnmanuel.Modelos;
+
     public record NumberRecord
     {
         public int Id {  get; set; }
@@ -9,4 +9,4 @@
         public int Resultado { get; set; }
 
     }
-}
+
