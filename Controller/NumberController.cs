@@ -1,5 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Http;
+using Parcial_p4_LuisEnmanuel.Modelos;
 using Parcial_p4_LuisEnmanuel.Servicios;
 
 namespace Parcial_p4_LuisEnmanuel.Controller
@@ -16,13 +16,38 @@ namespace Parcial_p4_LuisEnmanuel.Controller
         }
 
         [HttpGet("numero/{numero:int}")]
-        public IActionResult Numero(int numero)
+        public async Task<IActionResult> Numero(int numero)
         {
+            int resultado = numero + numero;
 
-            return Ok(numero + numero);
+            var record = new NumberRecord
+            {
+                Fecha = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"),
+                Numero = numero,
+                Resultado = resultado
+            };
+
+            await _numbersService.SaveAsync(record);
+
+            return Ok(resultado);
         }
 
+        [HttpGet("{id:int}")]
+        public async Task<ActionResult<NumberRecord>> GetById(int id)
+        {
+            var record = await _numbersService.GetByIdAsync(id);
+
+            if (record == null)
+                return NotFound();
+
+            return Ok(record);
+        }
+
+        [HttpGet("historial")]
+        public async Task<ActionResult<IEnumerable<NumberRecord>>> GetList()
+        {
+            var records = await _numbersService.GetListAsync();
+            return Ok(records);
+        }
     }
-
- }   
-
+}
