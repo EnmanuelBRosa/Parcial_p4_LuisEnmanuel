@@ -8,7 +8,7 @@ namespace Parcial_p4_LuisEnmanuel.Controller;
 [ApiController]
 public class NumberController (NumbersService service) : ControllerBase
 {
-    [HttpGet("numero/{numero:int}")]
+    [HttpPost("numero/{numero:int}")]
 
     public async Task<IActionResult> Numero(int numero)
     {
@@ -43,4 +43,5 @@ public class NumberController (NumbersService service) : ControllerBase
         return Ok(records);
     }
 }
+
 
