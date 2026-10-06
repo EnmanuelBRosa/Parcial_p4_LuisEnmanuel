@@ -1,6 +1,0 @@
-@Parcial_p4_Luis_HostAddress = http://localhost:5097
-
-GET {{Parcial_p4_Luis_HostAddress}}/weatherforecast/
-Accept: application/json
-
-###
